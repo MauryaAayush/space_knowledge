@@ -48,7 +48,7 @@ class _SplashscreenState extends State<Splashscreen> {
             Image.asset('assets/images/Button.png'),
 
             SizedBox(
-              height: 30,
+              height: 40,
             )// Add some space below the button
           ],
         ),
