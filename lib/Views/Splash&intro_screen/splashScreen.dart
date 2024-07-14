@@ -16,10 +16,10 @@ class _SplashscreenState extends State<Splashscreen> {
     super.initState();
     // Start a timer that navigates to the next screen after 3 seconds
     Timer(const Duration(seconds: 3), () {
-      // Navigator.pushReplacement(
-      //   context,
-        MaterialPageRoute(builder: (context) => const HomeScreen()); // Replace with your next screen
-      // );
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => const HomeScreen()) // Replace with your next screen
+      );
     });
   }
 
