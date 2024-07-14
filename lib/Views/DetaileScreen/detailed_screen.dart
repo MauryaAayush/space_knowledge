@@ -11,7 +11,8 @@ class DetailScreen extends StatefulWidget {
   _DetailScreenState createState() => _DetailScreenState();
 }
 
-class _DetailScreenState extends State<DetailScreen> with SingleTickerProviderStateMixin {
+class _DetailScreenState extends State<DetailScreen>
+    with SingleTickerProviderStateMixin {
   late AnimationController _controller;
 
   @override
@@ -33,14 +34,6 @@ class _DetailScreenState extends State<DetailScreen> with SingleTickerProviderSt
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black,
-      appBar: AppBar(
-        backgroundColor: Colors.black,
-        elevation: 0,
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back, color: Colors.white),
-          onPressed: () => Navigator.of(context).pop(),
-        ),
-      ),
       body: Stack(
         children: [
           Positioned.fill(
@@ -71,16 +64,23 @@ class _DetailScreenState extends State<DetailScreen> with SingleTickerProviderSt
                   SizedBox(height: 24),
                   Text(
                     widget.planet.name,
-                    style: GoogleFonts.roboto(fontSize: 32, fontWeight: FontWeight.bold, color: Colors.white),
+                    style: GoogleFonts.roboto(
+                        fontSize: 32,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white),
                   ),
                   Text(
                     widget.planet.subtitle,
-                    style: GoogleFonts.roboto(fontSize: 18, color: Colors.grey),
+                    style:
+                    GoogleFonts.roboto(fontSize: 18, color: Colors.grey),
                   ),
                   SizedBox(height: 24),
                   Text(
                     'About ${widget.planet.name}',
-                    style: GoogleFonts.roboto(fontSize: 24, fontWeight: FontWeight.bold, color: Colors.white),
+                    style: GoogleFonts.roboto(
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white),
                   ),
                   SizedBox(height: 8),
                   Text(
@@ -125,7 +125,8 @@ class _DetailScreenState extends State<DetailScreen> with SingleTickerProviderSt
                       },
                       style: OutlinedButton.styleFrom(
                         backgroundColor: Colors.grey.shade700,
-                        padding: EdgeInsets.symmetric(horizontal: 120, vertical: 12),
+                        padding:
+                        EdgeInsets.symmetric(horizontal: 120, vertical: 12),
                       ),
                       child: Text(
                         'Take a trip',
@@ -135,6 +136,14 @@ class _DetailScreenState extends State<DetailScreen> with SingleTickerProviderSt
                   ),
                 ],
               ),
+            ),
+          ),
+          Positioned(
+            top: 40,
+            left: 16,
+            child: IconButton(
+              icon: Icon(Icons.arrow_back, color: Colors.white),
+              onPressed: () => Navigator.of(context).pop(),
             ),
           ),
         ],
