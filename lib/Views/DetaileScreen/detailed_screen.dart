@@ -36,7 +36,6 @@ class _DetailScreenState extends State<DetailScreen>
       backgroundColor: Colors.black,
       body: Stack(
         children: [
-
           Positioned.fill(
             child: Image.network(
               widget.planet.image, // or use a different image URL for the background
