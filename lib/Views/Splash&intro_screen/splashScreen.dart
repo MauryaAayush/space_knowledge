@@ -47,7 +47,7 @@ class _SplashscreenState extends State<Splashscreen> {
             Spacer(),
             GestureDetector(
                 onTap: () {
-                  Navigator.of(context).push(MaterialPageRoute(builder: (context) =>  HomeScreen(),));
+                  Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) =>  HomeScreen(),));
                 },
 
                 child: Image.asset('assets/images/Button.png')),

@@ -2,6 +2,7 @@
 class Planet {
   final String position;
   final String name;
+  final String subtitle;
   final String image;
   final String velocity;
   final String distance;
@@ -13,6 +14,7 @@ class Planet {
     required this.image,
     required this.velocity,
     required this.distance,
+    required this.subtitle,
     required this.description,
   });
 
@@ -21,6 +23,7 @@ class Planet {
     return Planet(
       position: json['position'],
       name: json['name'],
+      subtitle: json['subtitle'],
       image: json['image'],
       velocity: json['velocity'],
       distance: json['distance'],

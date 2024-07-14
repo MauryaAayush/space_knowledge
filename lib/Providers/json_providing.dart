@@ -20,8 +20,6 @@ class JsonProvider extends ChangeNotifier {
     dataList = jsonDecode(json);
 
     userList = dataList.map((e) => Planet.fromJson(e)).toList();
-
-    print(userList);
     notifyListeners();
   }
 }
