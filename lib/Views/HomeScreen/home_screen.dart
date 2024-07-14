@@ -69,7 +69,7 @@ class _HomeScreenState extends State<HomeScreen>
             child: Text(
               'Which planet\nwould you like to explore?',
               style: GoogleFonts.roboto(
-                  fontSize: 22,
+                  fontSize: 25,
                   letterSpacing: 0.5,
                   fontWeight: FontWeight.bold,
                   color: Colors.white),
