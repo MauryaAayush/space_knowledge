@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+import 'Views/HomeScreen/home_screen.dart';
+import 'Views/Splash&intro_screen/splashScreen.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -7,14 +10,13 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
+
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-
-      home:
+      debugShowCheckedModeBanner: false,
+        home: Splashscreen()
     );
   }
 }
-
-
