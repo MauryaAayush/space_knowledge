@@ -41,6 +41,8 @@ import 'package:flutter/material.dart';
 
 
 class HomeScreen extends StatefulWidget {
+  const HomeScreen({super.key});
+
   @override
   _HomeScreenState createState() => _HomeScreenState();
 }
@@ -90,7 +92,7 @@ class _HomeScreenState extends State<HomeScreen> {
           Padding(
             padding: const EdgeInsets.all(16.0),
             child: Text(
-              'Hi Ariful,',
+              'Hi Aayush,',
               style: TextStyle(fontSize: 24, color: Colors.white),
             ),
           ),
@@ -214,11 +216,11 @@ class _HomeScreenState extends State<HomeScreen> {
             label: '',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.favorite),
+            icon: Icon(Icons.bookmark),
             label: '',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.bookmark),
+            icon: Icon(Icons.person),
             label: '',
           ),
         ],
