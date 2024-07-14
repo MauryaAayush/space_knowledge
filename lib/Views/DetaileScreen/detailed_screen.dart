@@ -36,6 +36,7 @@ class _DetailScreenState extends State<DetailScreen>
       backgroundColor: Colors.black,
       body: Stack(
         children: [
+
           Positioned.fill(
             child: Image.network(
               widget.planet.image, // or use a different image URL for the background
@@ -50,6 +51,8 @@ class _DetailScreenState extends State<DetailScreen>
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+
+                  SizedBox(height: 54),
                   Center(
                     child: RotationTransition(
                       turns: _controller,
