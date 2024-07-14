@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -12,7 +11,8 @@ class HomeScreen extends StatefulWidget {
   _HomeScreenState createState() => _HomeScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateMixin {
+class _HomeScreenState extends State<HomeScreen>
+    with SingleTickerProviderStateMixin {
   final PageController _pageController = PageController();
   late AnimationController _animationController;
   int _currentPage = 0;
@@ -41,7 +41,9 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
       backgroundColor: Colors.black,
       appBar: AppBar(
         backgroundColor: Colors.black,
-        title: Text('Space', style: GoogleFonts.roboto(fontSize: 20, fontWeight: FontWeight.bold)),
+        title: Text('Space',
+            style:
+                GoogleFonts.roboto(fontSize: 20, fontWeight: FontWeight.bold)),
         elevation: 0,
         actions: [
           Padding(
@@ -66,7 +68,11 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
             padding: const EdgeInsets.symmetric(horizontal: 16.0),
             child: Text(
               'Which planet\nwould you like to explore?',
-              style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold, color: Colors.white),
+              style: GoogleFonts.roboto(
+                  fontSize: 22,
+                  letterSpacing: 0.5,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white),
             ),
           ),
           SizedBox(height: 24),
@@ -83,7 +89,6 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
                 final planet = provider.userList[index];
 
                 return AnimatedBuilder(
-
                   animation: _pageController,
                   builder: (context, child) {
                     double value = 1.0;
@@ -116,7 +121,8 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   IconButton(
-                                    icon: Icon(Icons.arrow_back_ios, color: Colors.white),
+                                    icon: Icon(Icons.arrow_back_ios,
+                                        color: Colors.white),
                                     onPressed: () {
                                       if (_currentPage > 0) {
                                         _pageController.previousPage(
@@ -131,19 +137,25 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
                                     children: [
                                       Text(
                                         planet.name,
-                                        style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: Colors.white),
+                                        style: TextStyle(
+                                            fontSize: 24,
+                                            fontWeight: FontWeight.bold,
+                                            color: Colors.white),
                                       ),
                                       Text(
                                         planet.subtitle,
-                                        style: TextStyle(fontSize: 16, color: Colors.grey),
+                                        style: TextStyle(
+                                            fontSize: 16, color: Colors.grey),
                                       ),
                                     ],
                                   ),
                                   SizedBox(width: 50),
                                   IconButton(
-                                    icon: Icon(Icons.arrow_forward_ios, color: Colors.white),
+                                    icon: Icon(Icons.arrow_forward_ios,
+                                        color: Colors.white),
                                     onPressed: () {
-                                      if (_currentPage < provider.userList.length - 1) {
+                                      if (_currentPage <
+                                          provider.userList.length - 1) {
                                         _pageController.nextPage(
                                           duration: Duration(seconds: 1),
                                           curve: Curves.easeInQuart,
@@ -162,17 +174,20 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
                                   Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                      builder: (context) => DetailScreen(planet: planet),
+                                      builder: (context) =>
+                                          DetailScreen(planet: planet),
                                     ),
                                   );
                                 },
                                 style: OutlinedButton.styleFrom(
                                   backgroundColor: Colors.yellow,
-                                  padding: EdgeInsets.symmetric(horizontal: 120, vertical: 12),
+                                  padding: EdgeInsets.symmetric(
+                                      horizontal: 120, vertical: 12),
                                 ),
                                 child: Text(
                                   'Explore planet',
-                                  style: TextStyle(color: Colors.black, fontSize: 18),
+                                  style: TextStyle(
+                                      color: Colors.black, fontSize: 18),
                                 ),
                               ),
                             ),
