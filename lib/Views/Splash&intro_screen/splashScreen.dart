@@ -18,7 +18,7 @@ class _SplashscreenState extends State<Splashscreen> {
     Timer(const Duration(seconds: 3), () {
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => const HomeScreen()) // Replace with your next screen
+        MaterialPageRoute(builder: (context) =>  HomeScreen()) // Replace with your next screen
       );
     });
   }
@@ -47,7 +47,7 @@ class _SplashscreenState extends State<Splashscreen> {
             Spacer(),
             GestureDetector(
                 onTap: () {
-                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => const HomeScreen(),));
+                  Navigator.of(context).push(MaterialPageRoute(builder: (context) =>  HomeScreen(),));
                 },
 
                 child: Image.asset('assets/images/Button.png')),
