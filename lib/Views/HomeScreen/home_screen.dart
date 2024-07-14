@@ -1,10 +1,7 @@
-import 'dart:ui';
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'package:space_knowledge/Model/model_class.dart';
 import '../../Providers/json_providing.dart';
 import '../DetaileScreen/detailed_screen.dart';
 
