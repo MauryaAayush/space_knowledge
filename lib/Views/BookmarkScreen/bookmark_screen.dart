@@ -12,7 +12,7 @@ class BookmarkScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Bookmarked Planets'),
+        title: Text('Liked Planets'),
         backgroundColor: Colors.black,
       ),
       body: ListView.builder(

@@ -17,6 +17,7 @@ class _HomeScreenState extends State<HomeScreen>
   final PageController _pageController = PageController();
   late AnimationController _animationController;
   int _currentPage = 0;
+  int _selectedIndex = 0;
 
   @override
   void initState() {
@@ -34,39 +35,18 @@ class _HomeScreenState extends State<HomeScreen>
     super.dispose();
   }
 
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     JsonProvider provider = Provider.of<JsonProvider>(context, listen: true);
 
-    return Scaffold(
-      backgroundColor: Colors.black,
-      appBar: AppBar(
-        backgroundColor: Colors.black,
-        title: Text('Space',
-            style:
-            GoogleFonts.roboto(fontSize: 20, fontWeight: FontWeight.bold)),
-        elevation: 0,
-        actions: [
-          IconButton(
-            icon: Icon(Icons.bookmark, color: Colors.white),
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const BookmarkScreen(),
-                ),
-              );
-            },
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: CircleAvatar(
-              backgroundImage: AssetImage('assets/images/Ai Photo.jpg'),
-            ),
-          ),
-        ],
-      ),
-      body: Column(
+    Widget _buildHomeScreen() {
+      return Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
@@ -225,11 +205,44 @@ class _HomeScreenState extends State<HomeScreen>
             ),
           ),
         ],
+      );
+    }
+
+    return Scaffold(
+      backgroundColor: Colors.black,
+      appBar: AppBar(
+        backgroundColor: Colors.black,
+        title: Text('Space',
+            style:
+            GoogleFonts.roboto(fontSize: 20, fontWeight: FontWeight.bold)),
+        elevation: 0,
+        actions: [
+          IconButton(
+            icon: Icon(Icons.bookmark, color: Colors.white),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const BookmarkScreen(),
+                ),
+              );
+            },
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: CircleAvatar(
+              backgroundImage: AssetImage('assets/images/Ai Photo.jpg'),
+            ),
+          ),
+        ],
       ),
+      body: _selectedIndex == 3 ? BookmarkScreen() : _buildHomeScreen(),
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: Colors.black,
         selectedItemColor: Colors.yellow,
         unselectedItemColor: Colors.white,
+        currentIndex: _selectedIndex,
+        onTap: _onItemTapped,
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
@@ -244,7 +257,7 @@ class _HomeScreenState extends State<HomeScreen>
             label: '',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.bookmark),
+            icon: Icon(Icons.favorite),
             label: '',
           ),
           BottomNavigationBarItem(
