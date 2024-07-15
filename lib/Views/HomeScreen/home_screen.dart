@@ -239,6 +239,7 @@ class _HomeScreenState extends State<HomeScreen>
       body: _selectedIndex == 3 ? BookmarkScreen() : _buildHomeScreen(),
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: Colors.black,
+
         selectedItemColor: Colors.yellow,
         unselectedItemColor: Colors.white,
         currentIndex: _selectedIndex,
