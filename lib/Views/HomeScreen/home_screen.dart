@@ -185,7 +185,7 @@ class _HomeScreenState extends State<HomeScreen>
                                 },
                                 style: OutlinedButton.styleFrom(
                                   backgroundColor: Colors.yellow,
-                                  padding: EdgeInsets.symmetric(
+                                  padding: const EdgeInsets.symmetric(
                                       horizontal: 120, vertical: 12),
                                 ),
                                 child: Text(
