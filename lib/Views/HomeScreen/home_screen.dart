@@ -170,7 +170,7 @@ class _HomeScreenState extends State<HomeScreen>
                                 ],
                               ),
                             ),
-                            SizedBox(height: 100),
+                            const SizedBox(height: 100),
                             Center(
                               child: OutlinedButton(
                                 onPressed: () {
