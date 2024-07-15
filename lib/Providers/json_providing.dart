@@ -1,25 +1,36 @@
-import 'dart:convert';
-import 'dart:math';
-
-import 'package:flutter/foundation.dart';
-import 'package:flutter/services.dart';
+import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import '../Model/model_class.dart';
 
-class JsonProvider extends ChangeNotifier {
-  List dataList = [];
+class JsonProvider with ChangeNotifier {
   List<Planet> userList = [];
+  List<Planet> bookmarkedList = [];
 
   JsonProvider() {
-    print('--------------------- data called ----------------');
-    jsonParsing();
-    print('--------------------- Done ----------------');
+    _loadBookmarkedPlanets();
   }
 
-  Future<void> jsonParsing() async {
-    String? json = await rootBundle.loadString('assets/json/data.json');
-    dataList = jsonDecode(json);
+  void _loadBookmarkedPlanets() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    List<String>? bookmarkedPlanets = prefs.getStringList('bookmarkedPlanets');
+    if (bookmarkedPlanets != null) {
+      bookmarkedList = userList
+          .where((planet) => bookmarkedPlanets.contains(planet.name))
+          .toList();
+      notifyListeners();
+    }
+  }
 
-    userList = dataList.map((e) => Planet.fromJson(e)).toList();
+  void toggleBookmark(Planet planet) async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    if (bookmarkedList.contains(planet)) {
+      bookmarkedList.remove(planet);
+    } else {
+      bookmarkedList.add(planet);
+    }
+    List<String> bookmarkedPlanets =
+    bookmarkedList.map((planet) => planet.name).toList();
+    prefs.setStringList('bookmarkedPlanets', bookmarkedPlanets);
     notifyListeners();
   }
 }
