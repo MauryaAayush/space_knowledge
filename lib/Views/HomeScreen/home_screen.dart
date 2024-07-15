@@ -236,7 +236,7 @@ class _HomeScreenState extends State<HomeScreen>
           ),
         ],
       ),
-      body: _selectedIndex == 3 ? BookmarkScreen() : _buildHomeScreen(),
+      body: _selectedIndex == 3 ? const BookmarkScreen() : _buildHomeScreen(),
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: Colors.black,
 
