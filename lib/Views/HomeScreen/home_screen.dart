@@ -153,15 +153,15 @@ class _HomeScreenState extends State<HomeScreen>
                                       ),
                                     ],
                                   ),
-                                  SizedBox(width: 50),
+                                  const SizedBox(width: 50),
                                   IconButton(
-                                    icon: Icon(Icons.arrow_forward_ios,
+                                    icon: const Icon(Icons.arrow_forward_ios,
                                         color: Colors.white),
                                     onPressed: () {
                                       if (_currentPage <
                                           provider.userList.length - 1) {
                                         _pageController.nextPage(
-                                          duration: Duration(seconds: 1),
+                                          duration: const Duration(seconds: 1),
                                           curve: Curves.easeInQuart,
                                         );
                                       }
