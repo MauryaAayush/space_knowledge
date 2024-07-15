@@ -218,7 +218,7 @@ class _HomeScreenState extends State<HomeScreen>
         elevation: 0,
         actions: [
           IconButton(
-            icon: Icon(Icons.bookmark, color: Colors.white),
+            icon: const Icon(Icons.bookmark, color: Colors.white),
             onPressed: () {
               Navigator.push(
                 context,
