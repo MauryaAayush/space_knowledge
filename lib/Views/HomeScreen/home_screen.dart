@@ -43,9 +43,20 @@ class _HomeScreenState extends State<HomeScreen>
         backgroundColor: Colors.black,
         title: Text('Space',
             style:
-                GoogleFonts.roboto(fontSize: 20, fontWeight: FontWeight.bold)),
+            GoogleFonts.roboto(fontSize: 20, fontWeight: FontWeight.bold)),
         elevation: 0,
         actions: [
+          IconButton(
+            icon: Icon(Icons.bookmark, color: Colors.white),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => BookmarkScreen(),
+                ),
+              );
+            },
+          ),
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: CircleAvatar(
@@ -87,6 +98,7 @@ class _HomeScreenState extends State<HomeScreen>
               itemCount: provider.userList.length,
               itemBuilder: (context, index) {
                 final planet = provider.userList[index];
+                final isBookmarked = provider.bookmarkedList.contains(planet);
 
                 return AnimatedBuilder(
                   animation: _pageController,
@@ -146,6 +158,17 @@ class _HomeScreenState extends State<HomeScreen>
                                         planet.subtitle,
                                         style: TextStyle(
                                             fontSize: 16, color: Colors.grey),
+                                      ),
+                                      IconButton(
+                                        icon: Icon(
+                                          isBookmarked
+                                              ? Icons.favorite
+                                              : Icons.favorite_border,
+                                          color: Colors.white,
+                                        ),
+                                        onPressed: () {
+                                          provider.toggleBookmark(planet);
+                                        },
                                       ),
                                     ],
                                   ),
