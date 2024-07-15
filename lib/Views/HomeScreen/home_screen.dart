@@ -67,7 +67,7 @@ class _HomeScreenState extends State<HomeScreen>
                   color: Colors.white),
             ),
           ),
-          SizedBox(height: 24),
+          const SizedBox(height: 24),
           Expanded(
             child: PageView.builder(
               controller: _pageController,
