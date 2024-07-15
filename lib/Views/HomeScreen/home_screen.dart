@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import '../../Providers/json_providing.dart';
+import '../BookmarkScreen/bookmark_screen.dart';
 import '../DetaileScreen/detailed_screen.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -52,7 +53,7 @@ class _HomeScreenState extends State<HomeScreen>
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => BookmarkScreen(),
+                  builder: (context) => const BookmarkScreen(),
                 ),
               );
             },
