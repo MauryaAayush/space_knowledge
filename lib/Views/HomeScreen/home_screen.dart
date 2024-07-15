@@ -119,13 +119,13 @@ class _HomeScreenState extends State<HomeScreen>
                                     onPressed: () {
                                       if (_currentPage > 0) {
                                         _pageController.previousPage(
-                                          duration: Duration(seconds: 1),
+                                          duration: const Duration(seconds: 1),
                                           curve: Curves.easeInOutCirc,
                                         );
                                       }
                                     },
                                   ),
-                                  SizedBox(width: 50),
+                                  const SizedBox(width: 50),
                                   Column(
                                     children: [
                                       Text(
