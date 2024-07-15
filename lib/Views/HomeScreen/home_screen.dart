@@ -137,7 +137,7 @@ class _HomeScreenState extends State<HomeScreen>
                                       ),
                                       Text(
                                         planet.subtitle,
-                                        style: TextStyle(
+                                        style: const TextStyle(
                                             fontSize: 16, color: Colors.grey),
                                       ),
                                       IconButton(
