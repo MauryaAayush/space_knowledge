@@ -188,7 +188,7 @@ class _HomeScreenState extends State<HomeScreen>
                                   padding: const EdgeInsets.symmetric(
                                       horizontal: 120, vertical: 12),
                                 ),
-                                child: Text(
+                                child: const Text(
                                   'Explore planet',
                                   style: TextStyle(
                                       color: Colors.black, fontSize: 18),
