@@ -38,9 +38,9 @@ class _DetailScreenState extends State<DetailScreen>
         children: [
           Positioned.fill(
             child: Image.network(
-              widget.planet.image, // or use a different image URL for the background
+              widget.planet.image,
               fit: BoxFit.cover,
-              color: Colors.black.withOpacity(0.6), // Adjust opacity for better readability
+              color: Colors.black.withOpacity(0.6),
               colorBlendMode: BlendMode.darken,
             ),
           ),
@@ -50,16 +50,18 @@ class _DetailScreenState extends State<DetailScreen>
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-
                   SizedBox(height: 54),
                   Center(
                     child: RotationTransition(
                       turns: _controller,
-                      child: Image.network(
-                        widget.planet.image,
-                        width: 250,
-                        height: 250,
-                        fit: BoxFit.cover,
+                      child: Hero(
+                        tag: 'planet-image-${widget.planet.name}',
+                        child: Image.network(
+                          widget.planet.image,
+                          width: 250,
+                          height: 250,
+                          fit: BoxFit.cover,
+                        ),
                       ),
                     ),
                   ),
@@ -89,11 +91,6 @@ class _DetailScreenState extends State<DetailScreen>
                     widget.planet.description,
                     style: GoogleFonts.roboto(fontSize: 16, color: Colors.white),
                   ),
-                  SizedBox(height: 24),
-                  // Image.network(
-                  //   widget.planet.additionalImage, // Assuming there's another image for details
-                  //   fit: BoxFit.cover,
-                  // ),
                   SizedBox(height: 24),
                   Text(
                     'Distance from Sun: ${widget.planet.distance} million km',

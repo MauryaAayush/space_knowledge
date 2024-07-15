@@ -100,11 +100,14 @@ class _HomeScreenState extends State<HomeScreen>
                             Center(
                               child: RotationTransition(
                                 turns: _animationController,
-                                child: Image.network(
-                                  planet.image,
-                                  width: 250,
-                                  height: 250,
-                                  fit: BoxFit.cover,
+                                child: Hero(
+                                  tag: 'planet-image-${planet.name}',
+                                  child: Image.network(
+                                    planet.image,
+                                    width: 250,
+                                    height: 250,
+                                    fit: BoxFit.cover,
+                                  ),
                                 ),
                               ),
                             ),
@@ -239,7 +242,6 @@ class _HomeScreenState extends State<HomeScreen>
       body: _selectedIndex == 3 ? const BookmarkScreen() : buildHomeScreen(),
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: Colors.black,
-
         selectedItemColor: Colors.yellow,
         unselectedItemColor: Colors.white,
         currentIndex: _selectedIndex,
