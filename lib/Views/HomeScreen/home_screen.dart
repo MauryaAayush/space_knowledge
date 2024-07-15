@@ -45,7 +45,7 @@ class _HomeScreenState extends State<HomeScreen>
   Widget build(BuildContext context) {
     JsonProvider provider = Provider.of<JsonProvider>(context, listen: true);
 
-    Widget _buildHomeScreen() {
+    Widget buildHomeScreen() {
       return Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -236,7 +236,7 @@ class _HomeScreenState extends State<HomeScreen>
           ),
         ],
       ),
-      body: _selectedIndex == 3 ? const BookmarkScreen() : _buildHomeScreen(),
+      body: _selectedIndex == 3 ? const BookmarkScreen() : buildHomeScreen(),
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: Colors.black,
 
