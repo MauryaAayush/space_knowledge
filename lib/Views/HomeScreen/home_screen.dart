@@ -130,7 +130,7 @@ class _HomeScreenState extends State<HomeScreen>
                                     children: [
                                       Text(
                                         planet.name,
-                                        style: TextStyle(
+                                        style: const TextStyle(
                                             fontSize: 24,
                                             fontWeight: FontWeight.bold,
                                             color: Colors.white),
