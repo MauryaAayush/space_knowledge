@@ -41,7 +41,9 @@ Welcome to the Space Knowledge App! This application is your gateway to explorin
 ###
 <h3 align="center"><i>Video</i></h3>
 <div align="center">    
+  
 <video src = "https://github.com/user-attachments/assets/f1ba377d-f3d0-4df6-9453-a57be28b0ff7">
+  
 </div>
 
 
