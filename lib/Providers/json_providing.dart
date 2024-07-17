@@ -12,7 +12,7 @@ class JsonProvider extends ChangeNotifier {
   JsonProvider() {
     print('--------------------- data called ----------------');
     jsonParsing();
-    _loadBookmarkedPlanets();
+    loadBookmarkedPlanets();
     print('--------------------- Done ----------------');
   }
 
@@ -24,7 +24,7 @@ class JsonProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  Future<void> _loadBookmarkedPlanets() async {
+  Future<void> loadBookmarkedPlanets() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     List<String>? bookmarkedPlanets = prefs.getStringList('bookmarkedPlanets');
 
@@ -36,7 +36,7 @@ class JsonProvider extends ChangeNotifier {
     }
   }
 
-  Future<void> _saveBookmarkedPlanets() async {
+  Future<void> saveBookmarkedPlanets() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     List<String> bookmarkedPlanets =
     bookmarkedList.map((planet) => planet.name).toList();
@@ -49,7 +49,7 @@ class JsonProvider extends ChangeNotifier {
     } else {
       bookmarkedList.add(planet);
     }
-    _saveBookmarkedPlanets();
+    saveBookmarkedPlanets();
     notifyListeners();
   }
 }
