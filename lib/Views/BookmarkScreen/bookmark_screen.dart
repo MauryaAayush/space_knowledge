@@ -20,7 +20,7 @@ class BookmarkScreen extends StatelessWidget {
         itemBuilder: (context, index) {
           final planet = provider.bookmarkedList[index];
           return ListTile(
-            leading: Image.network(planet.image),
+            leading: Image.asset(planet.image),
             title: Text(
               planet.name,
               style: TextStyle(color: Colors.white),

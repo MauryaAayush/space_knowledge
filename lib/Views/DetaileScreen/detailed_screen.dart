@@ -37,7 +37,7 @@ class _DetailScreenState extends State<DetailScreen>
       body: Stack(
         children: [
           Positioned.fill(
-            child: Image.network(
+            child: Image.asset(
               widget.planet.image,
               fit: BoxFit.cover,
               color: Colors.black.withOpacity(0.6),
@@ -56,7 +56,7 @@ class _DetailScreenState extends State<DetailScreen>
                       turns: _controller,
                       child: Hero(
                         tag: 'planet-image-${widget.planet.name}',
-                        child: Image.network(
+                        child: Image.asset(
                           widget.planet.image,
                           width: 250,
                           height: 250,
@@ -141,7 +141,7 @@ class _DetailScreenState extends State<DetailScreen>
             top: 40,
             left: 16,
             child: IconButton(
-              icon: Icon(Icons.arrow_back, color: Colors.white),
+              icon: const Icon(Icons.arrow_back, color: Colors.white),
               onPressed: () => Navigator.of(context).pop(),
             ),
           ),

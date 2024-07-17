@@ -102,7 +102,7 @@ class _HomeScreenState extends State<HomeScreen>
                                 turns: _animationController,
                                 child: Hero(
                                   tag: 'planet-image-${planet.name}',
-                                  child: Image.network(
+                                  child: Image.asset(
                                     planet.image,
                                     width: 250,
                                     height: 250,
